@@ -2,7 +2,6 @@ const phrases = [
   "green",
   "cat",
   "sits happily"
-
 ];
 
 function showPhrases(arr) {
