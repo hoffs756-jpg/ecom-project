@@ -1,33 +1,44 @@
-/* PRODUCT CLICK */
-const items = document.querySelectorAll('.product-list-item');
-const img = document.getElementById('detailImg');
+/* WAIT until HTML loads (safe placement) */
+document.addEventListener('DOMContentLoaded', () => {
 
-items.forEach(item => {
-  item.addEventListener('click', () => {
+  /* PRODUCT CLICK */
+  const items = document.querySelectorAll('.product-list-item');
+  const img = document.getElementById('detailImg');
 
-    items.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
+  items.forEach(item => {
+    item.addEventListener('click', () => {
 
-    img.src = "chewedpen.png"; // same image always
+      /* remove black highlight from all */
+      items.forEach(i => i.classList.remove('active'));
+
+      /* add black highlight to clicked */
+      item.classList.add('active');
+
+      /* change image */
+      img.src = item.dataset.img;
+
+    });
   });
-});
 
 
-/* 🔥 FALLING MAN SCROLL (BIGGER + SMOOTHER) */
-const fallingMan = document.getElementById('falling-man');
+  /* FALLING MAN SCROLL */
+  const fallingMan = document.getElementById('falling-man');
 
-window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', () => {
 
-  const scrollY = window.scrollY;
-  const maxScroll = document.body.scrollHeight - window.innerHeight;
-  const progress = scrollY / maxScroll;
+    const rect = document.querySelector('.page-right').getBoundingClientRect();
+    const windowH = window.innerHeight;
 
-  /* MUCH STRONGER SCALE */
-  const scale = 1 + progress * 4;   // bigger growth
-  const translateY = progress * 400;
-  const rotate = progress * 15;
+    let progress = 1 - (rect.bottom / (rect.height + windowH));
+    progress = Math.max(0, Math.min(1, progress));
 
-  fallingMan.style.transform =
-    `translateY(${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
+    const scale = 1 + progress * 5;
+    const translateY = progress * 300;
+    const rotate = progress * 12;
+
+    fallingMan.style.transform =
+      `translateY(${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
+
+  });
 
 });

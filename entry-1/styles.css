@@ -12,7 +12,7 @@ body {
 nav {
   position: fixed;
   width: 100%;
-  padding: 20px 40px;
+  padding: 16px 32px;
   background: white;
   border-bottom: 1px solid black;
   z-index: 100;
@@ -20,48 +20,48 @@ nav {
 
 /* HERO */
 .hero-header {
-  padding: 120px 40px 40px;
+  padding: 100px 32px 32px;
   border-bottom: 1px solid black;
 }
 
-/* 🔥 TOP TEXT — WIDER */
+/* tighter + cleaner */
 .top-text {
   font-family: monospace;
-  font-size: 10px;
-  letter-spacing: 0.35em; /* wider */
-  line-height: 1.6;
-  max-width: 100%;
-  margin-bottom: 40px;
+  font-size: 9px;
+  letter-spacing: 0.25em;
+  line-height: 1.4;
+  margin-bottom: 24px;
+  max-width: 800px;
 }
 
-/* TITLE — force clean fit */
+/* scaled to fit laptop */
 .hero-title {
   font-family: monospace;
-  font-size: clamp(48px, 9vw, 140px);
-  letter-spacing: 0.2em;
-  white-space: nowrap; /* prevents breaking */
+  font-size: clamp(42px, 6vw, 90px);
+  letter-spacing: 0.15em;
+  white-space: nowrap;
 }
 
 /* PRODUCTS */
 .product-list-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 1200px;
 }
 
 .product-list-item {
-  padding: 24px;
+  padding: 18px;
   border-bottom: 1px solid black;
   cursor: pointer;
   transition: 0.2s;
 }
 
-/* 🔥 ACTIVE STATE */
 .product-list-item.active {
   background: black;
   color: white;
 }
 
-/* RIGHT IMAGE */
+/* IMAGE */
 .product-detail {
   display: flex;
   align-items: center;
@@ -70,25 +70,24 @@ nav {
 
 .product-detail img {
   width: 100%;
-  max-width: 300px;
+  max-width: 240px;
 }
 
-/* RIGHT SIDE BIGGER */
+/* RIGHT SIDE */
 .page-right {
-  height: 250vh;
+  height: 180vh; /* less excessive */
 }
 
 .falling-man-zone {
   position: sticky;
-  top: 10vh;
+  top: 15vh;
   display: flex;
   justify-content: center;
 }
 
-/* START SMALLER so growth is noticeable */
+/* START SMALLER */
 #falling-man {
-  width: 180px;
-  will-change: transform;
+  width: 140px;
 }
 
 #falling-man img {
