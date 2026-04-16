@@ -2,27 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CHEWED PENCAP✱✱</title>
 
-  <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">Chewed Pencap✱✱</div>
+    <div>Chewed Pencap✱✱</div>
     <ul class="nav-links">
       <li><a href="#products">Products</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -30,66 +24,48 @@
   <section class="page-left" id="products">
 
     <div class="hero-header">
+
+      <div class="top-text">
+        because everything meaningful gets thrown away the evidence that someone was here
+        and thinking about something they couldn’t resolve those moments don’t get archived
+        or photographed because everything meaningful gets thrown away the evidence that
+        someone was here and thinking about something they couldn’t resolve
+      </div>
+
       <div class="hero-title">CHEWED PENCAP✱✱</div>
       <div class="hero-sub">made to order · handcrafted · limited edition</div>
+
     </div>
 
     <div class="product-list-section">
-      <div class="product-list" id="productList">
-        <div class="product-list-item active" data-product="0">Blue pen cap 2023</div>
-        <div class="product-list-item" data-product="1">Blue pen cap 2023 (alt)</div>
-        <div class="product-list-item" data-product="2">Blue pen cap 2026</div>
-        <div class="product-list-item" data-product="3">Red pen cap 2026</div>
-        <div class="product-list-item" data-product="4">Green pen cap 2021</div>
-        <div class="product-list-item" data-product="5">Green pen cap 2022</div>
+      <div class="product-list">
+        <div class="product-list-item active">Blue pen cap 2023</div>
+        <div class="product-list-item">Blue pen cap 2023 (alt)</div>
+        <div class="product-list-item">Blue pen cap 2026</div>
+        <div class="product-list-item">Red pen cap 2026</div>
+        <div class="product-list-item">Green pen cap 2021</div>
+        <div class="product-list-item">Green pen cap 2022</div>
       </div>
 
       <div class="product-detail">
-        <h3 id="detailName">Blue pen cap 2023</h3>
         <div class="detail-image">
-          <img id="detailImg"
-            src="chewedpen.png" />
+          <img id="detailImg" src="chewedpen.png">
         </div>
-        <p id="detailDesc"></p>
         <button class="add-btn">Add to Cart — $20</button>
       </div>
     </div>
 
-    <!-- CAROUSEL -->
-    <div class="carousel-section" id="menu">
-      <div class="carousel-label">Product Menu — 3D Render Series</div>
-      <div class="carousel-wrapper">
-        <div class="carousel-track" id="carouselTrack"></div>
-      </div>
-      <div class="carousel-controls">
-        <button class="carousel-btn" id="prevBtn">&#8592;</button>
-        <button class="carousel-btn" id="nextBtn">&#8594;</button>
-      </div>
-    </div>
+    <div class="carousel-section"></div>
 
   </section>
 
   <!-- RIGHT -->
-  <section class="page-right" id="about">
+  <section class="page-right">
 
-    <div class="right-hero">
-      <div class="right-hero-title">CHEWED PENCAP✱✱</div>
-      <p class="right-hero-body">
-        because everything meaningful gets thrown away.
-      </p>
-    </div>
-
-    <div class="falling-man-zone" id="fallingZone">
-      <span class="scroll-arrow">scroll</span>
+    <div class="falling-man-zone">
       <div id="falling-man">
-        <img src="falling-man.jpg" />
+        <img src="falling-man.jpg">
       </div>
-    </div>
-
-    <div class="quote-section" id="contact">
-      <p class="quote-text">
-        because everything meaningful gets thrown away.
-      </p>
     </div>
 
     <footer>
@@ -99,7 +75,6 @@
 
   </section>
 
-  <!-- JS -->
   <script src="script.js"></script>
 </body>
 </html>
