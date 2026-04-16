@@ -1,44 +1,68 @@
-/* WAIT until HTML loads (safe placement) */
-document.addEventListener('DOMContentLoaded', () => {
+/* PRODUCT CLICK */
+const items = document.querySelectorAll('.product-list-item');
+const img = document.getElementById('detailImg');
 
-  /* PRODUCT CLICK */
-  const items = document.querySelectorAll('.product-list-item');
-  const img = document.getElementById('detailImg');
+items.forEach(item => {
+  item.addEventListener('click', () => {
 
-  items.forEach(item => {
-    item.addEventListener('click', () => {
+    items.forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
 
-      /* remove black highlight from all */
-      items.forEach(i => i.classList.remove('active'));
-
-      /* add black highlight to clicked */
-      item.classList.add('active');
-
-      /* change image */
-      img.src = item.dataset.img;
-
-    });
+    img.src = item.dataset.img;
   });
+});
 
 
-  /* FALLING MAN SCROLL */
-  const fallingMan = document.getElementById('falling-man');
+/* FALLING MAN (BIG SCALE FIXED) */
+const fallingMan = document.getElementById('falling-man');
 
-  window.addEventListener('scroll', () => {
+window.addEventListener('scroll', () => {
 
-    const rect = document.querySelector('.page-right').getBoundingClientRect();
-    const windowH = window.innerHeight;
+  const rect = document.querySelector('.page-right').getBoundingClientRect();
+  const windowH = window.innerHeight;
 
-    let progress = 1 - (rect.bottom / (rect.height + windowH));
-    progress = Math.max(0, Math.min(1, progress));
+  let progress = 1 - (rect.bottom / (rect.height + windowH));
+  progress = Math.max(0, Math.min(1, progress));
 
-    const scale = 1 + progress * 5;
-    const translateY = progress * 300;
-    const rotate = progress * 12;
+  const scale = 1 + progress * 5;
+  const translateY = progress * 300;
 
-    fallingMan.style.transform =
-      `translateY(${translateY}px) scale(${scale}) rotate(${rotate}deg)`;
-
-  });
+  fallingMan.style.transform =
+    `translateY(${translateY}px) scale(${scale})`;
 
 });
+
+
+/* 🔥 CAROUSEL (FROM YOUR PRODUCTS) */
+const carouselTrack = document.getElementById('carouselTrack');
+
+const images = [
+  "chewedpen.png",
+  "redpencap.png",
+  "greenpencap.png",
+    "chewedpen.png",
+  "redpencap.png",
+  "greenpencap.png"
+];
+
+images.forEach(src => {
+  const img = document.createElement('img');
+  img.src = src;
+  carouselTrack.appendChild(img);
+});
+
+/* AUTO SCROLL */
+let scrollX = 0;
+
+function animateCarousel() {
+  scrollX += 0.5;
+  carouselTrack.style.transform = `translateX(-${scrollX}px)`;
+
+  if (scrollX > carouselTrack.scrollWidth / 2) {
+    scrollX = 0;
+  }
+
+  requestAnimationFrame(animateCarousel);
+}
+
+animateCarousel();

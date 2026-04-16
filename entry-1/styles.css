@@ -1,8 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: Arial, sans-serif;
@@ -15,29 +11,24 @@ nav {
   padding: 16px 32px;
   background: white;
   border-bottom: 1px solid black;
-  z-index: 100;
 }
 
 /* HERO */
 .hero-header {
   padding: 100px 32px 32px;
-  border-bottom: 1px solid black;
 }
 
-/* tighter + cleaner */
 .top-text {
   font-family: monospace;
   font-size: 9px;
   letter-spacing: 0.25em;
-  line-height: 1.4;
-  margin-bottom: 24px;
-  max-width: 800px;
+  margin-bottom: 20px;
 }
 
-/* scaled to fit laptop */
+/* 🔥 TITLE FONT */
 .hero-title {
-  font-family: monospace;
-  font-size: clamp(42px, 6vw, 90px);
+  font-family: 'VT323', monospace;
+  font-size: clamp(50px, 6vw, 90px);
   letter-spacing: 0.15em;
   white-space: nowrap;
 }
@@ -46,14 +37,12 @@ nav {
 .product-list-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1200px;
 }
 
 .product-list-item {
-  padding: 18px;
+  padding: 16px;
   border-bottom: 1px solid black;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .product-list-item.active {
@@ -61,21 +50,19 @@ nav {
   color: white;
 }
 
-/* IMAGE */
 .product-detail {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .product-detail img {
-  width: 100%;
-  max-width: 240px;
+  width: 220px;
 }
 
-/* RIGHT SIDE */
+/* FALLING MAN */
 .page-right {
-  height: 180vh; /* less excessive */
+  height: 180vh;
 }
 
 .falling-man-zone {
@@ -85,11 +72,23 @@ nav {
   justify-content: center;
 }
 
-/* START SMALLER */
 #falling-man {
-  width: 140px;
+  width: 120px;
 }
 
-#falling-man img {
-  width: 100%;
+
+/* CAROUSEL */
+.carousel {
+  overflow: hidden;
+  padding: 40px;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.4s;
+}
+
+.carousel img {
+  width: 150px;
 }
