@@ -1,0 +1,86 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0a0a0a;
+  --white: #fff;
+  --off-white: #edeceb;
+  --grey: #d9d9d9;
+  --border: 1px solid #0a0a0a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--black);
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(255,255,255,0.9);
+  border-bottom: var(--border);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/* HERO */
+.hero-title {
+  font-family: monospace;
+  font-size: 80px;
+}
+
+/* PRODUCT LIST */
+.product-list-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-list-item {
+  padding: 20px;
+  border-bottom: var(--border);
+  cursor: pointer;
+}
+
+.product-list-item.active {
+  background: black;
+  color: white;
+}
+
+/* DETAIL */
+.product-detail {
+  padding: 20px;
+}
+
+/* CAROUSEL */
+.carousel-track {
+  display: flex;
+  gap: 10px;
+  transition: transform 0.3s;
+}
+
+.carousel-card {
+  min-width: 180px;
+  border: var(--border);
+}
+
+/* RIGHT PAGE */
+.page-right {
+  padding-top: 100px;
+}
+
+.falling-man-zone {
+  height: 400px;
+}
+
+/* FOOTER */
+footer {
+  padding: 20px;
+}
